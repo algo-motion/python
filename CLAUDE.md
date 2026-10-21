@@ -4,9 +4,7 @@ File này hướng dẫn Claude Code (claude.ai/code) khi làm việc với code
 
 ## Tổng quan
 
-Một repo nháp nhỏ gồm các script Python độc lập, gọi AWS qua `boto3`. Repo không có cấu trúc package, hệ thống build, bộ test hay linter. Mỗi script tự chứa và chạy từ trên xuống dưới ngay khi import (không có `main()` guard).
-
-Hiện tại script duy nhất là `AWSS3Client.py`, liệt kê tên các S3 bucket ở region `ap-northeast-1`.
+Môt repo dùng để học python kết hợp với AWS. Repo này có các scipt python sử dụng boto3 để làm gọi đến các API của AWS
 
 ## Lệnh
 
@@ -15,11 +13,11 @@ Trên Windows, với virtualenv cục bộ trong `.venv/` (đã được gitigno
 ```powershell
 .venv\Scripts\Activate.ps1
 python AWSS3Client.py
+pip install -r requirements.txt
 ```
 
-Script import `boto3` nhưng chưa có `requirements.txt`; nếu thiếu thì cài vào venv bằng `pip install boto3`.
 
 ## Lưu ý
 
 - Script dùng chuỗi credential mặc định của boto3 (biến môi trường / `~/.aws`); không có credential nào nằm trong repo. `.env` và `*.pem` đã được gitignore.
-- Region được ghi cứng trong từng script (`ap-northeast-1`).
+- Region có thể được cấu hình thay đổi: đọc từ trường `region` trong `config.json` (không commit secret vào file này). Có thể ghi đè tạm thời bằng `python AWSS3Client.py --region <tên>`.
