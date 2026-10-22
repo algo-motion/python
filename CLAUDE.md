@@ -12,7 +12,6 @@ Trên Windows, với virtualenv cục bộ trong `.venv/` (đã được gitigno
 
 ```powershell
 .venv\Scripts\Activate.ps1
-python AWSS3Client.py
 pip install -r requirements.txt
 ```
 
@@ -20,4 +19,4 @@ pip install -r requirements.txt
 ## Lưu ý
 
 - Script dùng chuỗi credential mặc định của boto3 (biến môi trường / `~/.aws`); không có credential nào nằm trong repo. `.env` và `*.pem` đã được gitignore.
-- Region có thể được cấu hình thay đổi: đọc từ trường `region` trong `config.json` (không commit secret vào file này). Có thể ghi đè tạm thời bằng `python AWSS3Client.py --region <tên>`.
+- Region có thể được cấu hình thay đổi: đọc từ trường `region` trong `config.json` (không commit secret vào file này). 
