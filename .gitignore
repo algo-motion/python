@@ -25,3 +25,7 @@ dist/
 .vscode/
 .DS_Store
 Thumbs.db
+
+# Claude Code local (per-user) files
+.claude/settings.local.json
+CLAUDE.local.md
