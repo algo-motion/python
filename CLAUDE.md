@@ -15,8 +15,13 @@ Trên Windows, với virtualenv cục bộ trong `.venv/` (đã được gitigno
 pip install -r requirements.txt
 ```
 
+## Nguyên tắc khi commit git
+
+- Commit những file dùng chung cho cả dự án.
+- Không commit những file cấu hình riêng cho từng người.
+- Không commit những thư mục được sinh ra do cài đặt gói hoặc chạy script.
 
 ## Lưu ý
 
 - Script dùng chuỗi credential mặc định của boto3 (biến môi trường / `~/.aws`); không có credential nào nằm trong repo. `.env` và `*.pem` đã được gitignore.
-- Region có thể được cấu hình thay đổi: đọc từ trường `region` trong `config.json` (không commit secret vào file này). 
+- `config.json` là cấu hình dùng chung của repo (được commit): trường `region` quy định region mặc định cho các script. Không commit secret vào file này.
