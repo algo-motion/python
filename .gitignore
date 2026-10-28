@@ -28,4 +28,5 @@ Thumbs.db
 
 # Claude Code local (per-user) files
 .claude/settings.local.json
+.claude/hooks/local
 CLAUDE.local.md
